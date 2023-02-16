@@ -63,16 +63,16 @@ $ upcoming -filepath /path/to/file -mode add -name "Appointment" -time +12h
 $ upcoming -filepath /path/to/file -mode add -name "Party" -time 2023-05-07
 $ upcoming -filepath /path/to/file -mode add -name "Meeting" -time 12.3.2023 12:00
 $ upcoming -filepath /path/to/file -mode print
-Party: 79d 6h 0m (1902h0m31s)
-Meeting: 23d 6h 0m (558h0m31s)
 Appointment: 12h 0m (12h0m0s)
+Meeting: 23d 6h 0m (558h0m31s)
+Party: 79d 6h 0m (1902h0m31s)
 $ upcoming -filepath /path/to/file -mode remove -name "Party"
 $ upcoming -filepath /path/to/file
-Meeting: 23d 5h 59m (557h59m20s)
 Appointment: 11h 58m (11h58m49s)
+Meeting: 23d 5h 59m (557h59m20s)
 ```
 - `/path/to/file` is json file, which will be created if it does not exist.
 - All appointments that are in the past will be removed automatically.
 
 ## Expected usage
-- `upcoming -filepath /path/to/file | head -n 1` in your `.bashrc` or `.zshrc` to get stressed every time you open a new terminal
+- `echo $(upcoming -filepath /path/to/file | head -n 1)` in your `.bashrc` or `.zshrc` to get stressed every time you open a new terminal

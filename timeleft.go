@@ -23,7 +23,7 @@ func timeLeftString(t time.Duration) string {
 	}
 
 	if minutes > 0 {
-		return fmt.Sprintf("%dm", minutes)
+		return fmt.Sprintf("%dm %ds", minutes, seconds%60)
 	}
 
 	return fmt.Sprintf("%ds", seconds)

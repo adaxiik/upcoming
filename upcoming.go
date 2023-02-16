@@ -63,7 +63,7 @@ func upcomingPrint(filepath string) error {
 	}
 
 	sort.Slice(keys, func(i, j int) bool {
-		return upcoming[keys[i]].After(upcoming[keys[j]])
+		return upcoming[keys[i]].Before(upcoming[keys[j]])
 	})
 
 	for _, key := range keys {
