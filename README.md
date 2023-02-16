@@ -75,4 +75,8 @@ Meeting: 23d 5h 59m (557h59m20s)
 - All appointments that are in the past will be removed automatically.
 
 ## Expected usage
-- `echo $(upcoming -filepath /path/to/file | head -n 1)` in your `.bashrc` or `.zshrc` to get stressed every time you open a new terminal
+```bash
+APPS=$(upcoming -filepath /path/to/file | head -n 1)
+if [[ -n $APPS ]] ; then echo $APPS ; fi
+```
+in your `.bashrc` or `.zshrc` to get stressed every time you open a new terminal
